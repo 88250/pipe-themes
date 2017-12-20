@@ -1,0 +1,15 @@
+{{define "Koma/index.html"}}
+<!DOCTYPE html>
+<html>
+<head>
+    {{template "Koma/head" .}}
+</head>
+<body>
+{{template "Koma/side" .}}
+<div class="main">
+    {{template "Koma/article-list" .}}
+    {{template "Koma/footer" .}}
+</div>
+</body>
+</html>
+{{end}}

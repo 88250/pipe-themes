@@ -1,0 +1,23 @@
+{{define "Gina/author-articles.html"}}
+<!DOCTYPE html>
+<html>
+<head>
+    {{template "Gina/head" .}}
+</head>
+<body>
+{{template "Gina/header" .}}
+<div class="wrapper">
+    <h1 class="page__headline">
+        {{.Author.Name}}
+        <span id="authorCount" class="ft-fade">0</span> <span class="ft-fade ft-13">{{.I18n.Article2}}</span>
+    </h1>
+</div>
+{{template "Gina/article-list" .}}
+{{template "Gina/side" .}}
+{{template "Gina/footer" .}}
+<script>
+  increase({{.Author.ArticleCount}}, 1000, 'authorCount', 0)
+</script>
+</body>
+</html>
+{{end}}

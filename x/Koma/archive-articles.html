@@ -1,0 +1,24 @@
+{{define "Koma/archive-articles.html"}}
+<!DOCTYPE html>
+<html>
+<head>
+    {{template "Koma/head" .}}
+</head>
+<body>
+{{template "Koma/side" .}}
+<div class="main">
+    <h2 class="page__title">
+        {{.Archive.Title}}
+        <span id="archiveArticleCount" class="ft-fade">0</span> <span class="ft-fade ft-13">{{.I18n.Article2}}</span>
+    </h2>
+    {{template "Koma/article-list" .}}
+
+    {{template "Koma/footer" .}}
+</div>
+
+<script>
+  increase({{.Archive.ArticleCount}}, 1000, 'archiveArticleCount', 0)
+</script>
+</body>
+</html>
+{{end}}

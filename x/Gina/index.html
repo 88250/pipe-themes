@@ -1,1 +1,14 @@
-Placeholder
+{{define "Gina/index.html"}}
+<!DOCTYPE html>
+<html>
+<head>
+    {{template "Gina/head" .}}
+</head>
+<body>
+{{template "Gina/header" .}}
+{{template "Gina/article-list" .}}
+{{template "Gina/side" .}}
+{{template "Gina/footer" .}}
+</body>
+</html>
+{{end}}
