@@ -183,10 +183,6 @@ a {
     box-shadow: rgba(0,0,0,0.05) 0px 1px 7px;
   }
 
-  .header__logo {
-    display: none;
-  }
-
   .side {
     right: 0;
   }
@@ -543,6 +539,7 @@ a {
       &__share {
         height: 30px;
         width: 240px;
+        overflow: hidden;
 
         &:hover {
           .action__btn--share {
@@ -872,6 +869,10 @@ a {
     }
   }
 
+  &__description {
+    margin-bottom: 20px;
+  }
+
   &__title {
     color: $black;
     font-size: 20px;
@@ -1021,5 +1022,9 @@ a {
 
   .article__relevant {
     padding: 50px 20px;
+  }
+
+  .article-detail__header .article__action {
+    position: inherit;
   }
 }
