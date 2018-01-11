@@ -2,29 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{template "Gina/head" .}}
-    {{if .PreviousArticle}}
-    <link rel="prev" title="{{.PreviousArticle.Title}}" href="{{.PreviousArticle.URL}}">
-    {{end}}
-    {{if .NextArticle}}
-    <link rel="next" title="{{.NextArticle.Title}}" href="{{.NextArticle.URL}}">
-    {{end}}
-    <!-- Open Graph -->
-    <meta property="og:locale" content="zh_CN" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{.Title}}" />
-    <meta property="og:description" content="{{.Article.Abstract}}" />
-    <meta property="og:image" content="{{.Article.ThumbnailURL}}" />
-    <meta property="og:url" content="{{.Article.URL}}" />
-    <meta property="og:site_name" content="Pipe" />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="{{.Article.Abstract}}" />
-    <meta name="twitter:title" content="{{.Title}}" />
-    <meta name="twitter:image" content="{{.Article.ThumbnailURL}}" />
-    <meta name="twitter:url" content="{{.Article.URL}}" />
-    <meta name="twitter:site" content="@DL88250" />
-    <meta name="twitter:creator" content="@DL88250" />
+    {{template "head/head" .}}
+    {{template "head/3rdstatistic" .}}
+    {{template "head/article" .}}
 </head>
 <body{{if .ToC}} class="body--side"{{end}}>
 {{template "Gina/header" .}}
@@ -189,22 +169,23 @@
             {{if $item.ThumbnailURL}}
             <a class="relevant__thumbnail"
                href="{{$item.URL}}"
-               data-src="{{$item.ThumbnailURL}}"></a>
-            <a class="module__list-title fn-ellipsis" href="{{$item.URL}}">{{$item.Title}}</a>
+               data-src="{{$item.ThumbnailURL}}"
+               target="_blank"></a>
+            <a class="module__list-title fn-ellipsis" href="{{$item.URL}}" target="_blank">{{$item.Title}}</a>
             {{else}}
-            <a class="module__list-title fn-ellipsis" href="{{$item.URL}}">{{$item.Title}}</a>
-            <a href="{{$item.URL}}" class="ft-fade relevant__abstract">
+            <a class="module__list-title fn-ellipsis" href="{{$item.URL}}" target="_blank">{{$item.Title}}</a>
+            <a href="{{$item.URL}} target="_blank class="ft-fade relevant__abstract">
                 {{$item.Abstract}}
             </a>
             {{end}}
             <div class="fn-relative">
                 <a class="avatar fn-absolute" data-src="{{$item.Author.AvatarURL}}"
-                   href="{{$item.Author.URL}}"></a>
+                   href="{{$item.Author.URL}}" target="_blank"></a>
                 <div class="relevant__content">
-                    <a href="{{$item.Author.URL}}" class="ft-gray">{{$item.Author.Name}}</a> <br>
+                    <a href="{{$item.Author.URL}}" class="ft-gray" target="_blank">{{$item.Author.Name}}</a> <br>
                     <span class="ft-12 ft-fade fn-clear">
                         {{$item.CreatedAt}}
-                       <a href="{{$item.URL}}#comments" class="fn-right ft-fade">
+                       <a href="{{$item.URL}}#comments" class="fn-right ft-fade" target="_blank">
                            {{if ne 0 $item.CommentCount}}
                            {{$item.CommentCount}}
                            {{$.I18n.Comment}}
