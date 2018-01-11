@@ -1,0 +1,19 @@
+{{define "Next/index.html"}}
+<!DOCTYPE html>
+<html>
+<head>
+    {{template "head/head" .}}
+    {{template "head/3rdstatistic" .}}
+</head>
+<body>
+<div class="main">
+    {{template "Next/header" .}}
+    <div class="wrapper">
+        {{template "Next/article-list" .}}
+    </div>
+    {{template "Next/side" .}}
+    {{template "Next/footer" .}}
+</div>
+</body>
+</html>
+{{end}}
