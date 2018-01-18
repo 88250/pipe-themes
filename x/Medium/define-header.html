@@ -1,0 +1,29 @@
+{{define "Medium/header"}}
+<header class="header">
+    <div class="wrapper fn-clear">
+        <a href="{{.BlogURL}}">
+            <img class="header__logo" data-src="{{.LogoURL}}">
+        </a>
+
+        <h1><a href="{{.BlogURL}}" class="header__title">{{.Setting.BasicBlogTitle}}</a></h1>
+
+        <div class="fn-right">
+            <a href="{{.BlogURL}}/search" aria-label="{{.I18n.Search}}"
+               class="pipe-tooltipped pipe-tooltipped--w header__icon">
+                <svg>
+                    <use xlink:href="#icon-search"></use>
+                </svg>
+            </a>
+            {{if eq .User.URole 0}}
+            <a href="https://hacpai.com/login" class="header__a">{{.I18n.Login}}</a>
+            <a href="https://hacpai.com/register" class="header__a header__a--border">{{.I18n.Register}}</a>
+            {{else}}
+            <a class="avatar pipe-tooltipped pipe-tooltipped--w header__icon"
+               aria-label="{{.I18n.Manage}}"
+               href="{{.Conf.Server}}/{{if ne .User.URole 4}}admin/{{end}}"
+               data-src="{{.User.AvatarURLWithSize 64}}"></a>
+            {{end}}
+        </div>
+    </div>
+</header>
+{{end}}
