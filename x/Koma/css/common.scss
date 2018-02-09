@@ -51,11 +51,15 @@ a {
     cursor: pointer;
     z-index: 4;
     color: #fff;
-    height: 20px;
-    width: 20px;
     top: 15px;
     right: 15px;
     transition: $transition;
+    height: 20px;
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
   }
 
   #showToc:hover,
@@ -194,7 +198,7 @@ a {
   bottom: 35px;
   right: 5px;
   animation: upbounce 4s 2s infinite;
-  z-index: 101;
+  z-index: 99;
   cursor: pointer;
   color: #b0a0aa;
   transition: $transition;
@@ -243,8 +247,7 @@ a {
   &__header {
     border-left: 5px solid $text-color;
     padding: 15px 130px 15px 25px;
-    line-height: 36px;
-    font-size: 26px;
+    line-height: 28px;
     transition: $transition;
     &--user {
       padding-right: 181px;
@@ -259,6 +262,7 @@ a {
       font-weight: 300;
       transition: $transition;
       word-break: break-all;
+      font-size: 28px;
       &:hover {
         color: $text-hover-color;
         text-decoration: none;
@@ -331,17 +335,6 @@ a {
           color: $gray;
         }
       }
-
-      span {
-        color: $blue;
-        cursor: pointer;
-        margin-left: 15px;
-        transition: $transition;
-
-        &:hover {
-          color: $gray;
-        }
-      }
     }
   }
 
@@ -387,7 +380,8 @@ a {
     margin-left: -58px;
     display: none;
     top: 25px;
-    border: 1px solid #b0a0aa
+    border: 1px solid #b0a0aa;
+    z-index: 1;
   }
 
   &__neighbor {
@@ -522,7 +516,7 @@ a {
 // tags
 .tag {
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
   height: 18px;
   line-height: 18px;
   display: inline-block;
@@ -591,21 +585,7 @@ a {
   }
 
   &--page {
-    font-size: 18px;
-    line-height: 36px;
-    height: 36px;
-    padding: 0 10px 0 20px;
-    margin: 0 48px 30px 0;
-
-    &:before {
-      left: -36px;
-      border-width: 18px;
-    }
-
-    &:after {
-      top: 16px;
-      left: 6px;
-    }
+    margin-right: 16px;
   }
 }
 
@@ -632,7 +612,7 @@ a {
     }
 
     &--archive {
-      padding: 30px 30px 0 48px;
+      padding: 30px;
     }
   }
   &__title {
@@ -782,6 +762,7 @@ a {
 
       h1 a {
         margin-top: 0;
+        font-size: 22px;
       }
 
       ul {
@@ -810,6 +791,10 @@ a {
     margin: 15px;
   }
 
+  .article__footer {
+    margin: 15px 20px;
+  }
+
   .article__footer > .fn-left,
   .article__footer > .fn-right,
   .footer .fn-right {
@@ -822,16 +807,20 @@ a {
   }
 
   .article__header {
-    padding: 10px 15px 10px 10px;
-  }
+    padding: 10px 15px 10px 25px;
 
-  .article__header .avatar {
-    position: inherit;
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    float: left;
-    margin: 11px 15px 0 0;
+    .article__title {
+      font-size: 18px;
+    }
+
+    .avatar {
+      position: inherit;
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      float: left;
+      margin: 11px 15px 0 0;
+    }
   }
 
   .pagination__item {
@@ -866,5 +855,14 @@ a {
 
   #pipeComments {
     padding: 15px;
+  }
+
+  .page__content .categories__header,
+  .page__title {
+    font-size: 18px;
+  }
+
+  .page__content--archive {
+    padding: 10px 30px;
   }
 }

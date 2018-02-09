@@ -13,7 +13,7 @@
     <article>
         <header class="article-detail__header">
             <div class="ft-center fn-relative">
-                <h2 class="header__title">
+                <h2 class="header__title{{if .Article.Editable}} header__title--edit{{end}}">
                     {{if .Article.Topped}}
                     <svg>
                         <use xlink:href="#focus"></use>
@@ -31,9 +31,12 @@
                     {{end}}
                     <time class="ft-nowrap">{{.Article.CreatedAt}}</time>
                     •
-                    <span class="ft-nowrap">{{.Article.ViewCount}} {{$.I18n.View}}</span> •
+                    <span class="ft-nowrap">{{.Article.ViewCount}} {{$.I18n.View}}</span>
+                    {{if gt .Article.CommentCount 0}}
+                    •
                     <a href="{{.Article.URL}}#pipeComments" class="ft-nowrap ft-gray">{{.Article.CommentCount}}
                         {{$.I18n.Comment}}</a>
+                    {{end}}
                 </div>
 
                 {{if .Article.Editable}}
