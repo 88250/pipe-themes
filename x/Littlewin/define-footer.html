@@ -1,0 +1,38 @@
+{{define "Littlewin/footer"}}
+<footer class="footer">
+    <div class="wrapper">
+        <div class="fn-clear">
+            <i>{{.Setting.BasicBlogSubtitle}}</i>
+            <div class="fn-right">
+                <a href="{{.BlogURL}}">{{.Setting.BasicBlogTitle}}</a> &copy; {{.Year}}
+                {{.Setting.BasicFooter}}
+            </div>
+        </div>
+        <div class="fn-clear">
+            <span class="ft__gray">{{.Statistic.StatisticViewCount}}</span>
+            {{.I18n.View}}
+            &nbsp;
+            <span class="ft__gray">{{.Statistic.StatisticArticleCount}}</span>
+            {{.I18n.Article}}
+            &nbsp;
+            <span class="ft__gray">{{.Statistic.StatisticCommentCount}}</span>
+            {{.I18n.Comment}}
+            <div class="fn-right">
+                Powered by <a href="https://b3log.org/" target="_blank">B3log 开源</a> •
+                <a href="https://hacpai.com/tag/Pipe" target="_blank">Pipe</a> •
+                Theme <a href="https://github.com/b3log/pipe-themes" target="_blank">Littlewin</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript"
+        id="script"
+        data-blogurl="{{.BlogURL}}"
+        data-isLogin="{{if eq .User.URole 0}}false{{else}}true{{end}}"
+        {{if .Article}}
+        src="{{.Conf.StaticServer}}/theme/x/{{.Setting.ThemeName}}/js/article.min.js?{{.Conf.StaticResourceVersion}}"
+        {{else}}
+        src="{{.Conf.StaticServer}}/theme/x/{{.Setting.ThemeName}}/js/common.min.js?{{.Conf.StaticResourceVersion}}"
+        {{end}}
+></script>
+{{end}}

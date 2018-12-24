@@ -1,12 +1,15 @@
 /**
- * skin gina style
+ * skin style
  *
  * @author <a href="http://vanessa.b3log.org">Liyuan Li</a>
- * @version 0.1.1.0, Apr 18, 2018
+ * @version 0.2.1.0, Dec 24, 2018
 */
+
+@import 'variables';
 @import '../../../scss/basic';
 @import '../../../scss/github';
 
+// reset
 body {
   font-size: 14px;
   line-height: 1.42857143;
@@ -396,6 +399,7 @@ svg {
       width: 100%;
       @include image-bg('../../../images/image-bg.svg');
       transition: $transition;
+      font-size: 0;
     }
 
     div.fn-none {

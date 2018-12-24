@@ -1,9 +1,10 @@
 {{define "Gina/header"}}
 <header class="header">
     <div class="wrapper ft-center">
-        <a href="{{.BlogURL}}" class="header__logo">
-            <img data-src="{{.LogoURL}}">
-            {{.Setting.BasicBlogTitle}}
+        <a href="{{.BlogURL}}"
+           class="header__logo fn-flex">
+            <img data-src="{{.LogoURL}}" class="fn-center">
+            <div class="fn-ellipsis fn-flex-1" title="{{.Setting.BasicBlogTitle}}">{{.Setting.BasicBlogTitle}}</div>
         </a>
         <a href="{{.BlogURL}}/categories">
             <svg><use xlink:href="#folders"></use></svg>
