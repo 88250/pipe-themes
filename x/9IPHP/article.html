@@ -7,7 +7,7 @@
     {{template "head/article" .}}
 </head>
 {{template "9IPHP/header" .}}
-<div id="pjax">
+<div id="pjax" class="fn__flex-1">
     {{if .pjax}}{{noescape "<!---- pjax {#pjax} start ---->"}}{{end}}
 <div class="main wrapper fn__clear">
     <div class="content">
@@ -53,7 +53,7 @@
                     {{end}}
                 </div>
             </header>
-            <section class="pipe-content__reset" id="articleContent"
+            <section class="vditor-reset" id="articleContent"
                      data-author="{{.Article.Author.Name}}">
                 {{.Article.Content}}
             </section>
